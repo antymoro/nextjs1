@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage('Docker Build') {
             steps {
-                imageName="test:${BUILD_NUMBER}"
-                containerName="test"
+                script {
+                    imageName="test:${BUILD_NUMBER}"
+                    containerName="test"
+                }
 
                 sh script: "docker system prune -af"
                 sh script: "docker build -t $imageName ."
