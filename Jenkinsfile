@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Test') {
+        stage('Docker Build') {
             steps {
                 imageName=test${BUILD_NUMBER}
                 containerName=test
